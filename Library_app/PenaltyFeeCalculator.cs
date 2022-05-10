@@ -20,13 +20,13 @@ namespace Library_app
         /// <param name="numberOfDays">Number of days book was borrowed.</param>
         /// <param name="bookTypeId">Id of a book type.</param>
         /// <returns>Calculated penalty fee.</returns>
-        public int CalculatePenaltyFee(int numberOfDays, int bookTypeId)
+        public int CalculatePenaltyFee(BorrowInfo borrowInfo)
         {
-            if(numberOfDays < 2)
+            if(borrowInfo.GetNumberOfDays() < 2)
             {
                 return 0;
             }
-            return (numberOfDays - 1) * storage.GetPenaltyInfo(bookTypeId).GetPenalty();
+            return (borrowInfo.GetNumberOfDays() - 1) * storage.GetPenaltyInfo(borrowInfo.GetBookTypeId()).GetPenalty();
         }
     }
 }

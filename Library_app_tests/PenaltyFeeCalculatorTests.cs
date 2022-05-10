@@ -9,6 +9,14 @@ namespace Library_app_tests
         [Test]
         public void CalculatePenaltyTest()
         {
+            var borrowInfo = new Mock<BorrowInfo>();
+            borrowInfo
+                .Setup(x => x.GetBookTypeId())
+                .Returns(1);
+            borrowInfo
+                .Setup(x => x.GetNumberOfDays())
+                .Returns(3);
+
             var penaltyInfo = new Mock<PenaltyInfo>("IT", 1, 5);
             penaltyInfo
                 .Setup(x => x.GetPenalty())
@@ -20,8 +28,8 @@ namespace Library_app_tests
                 .Returns(penaltyInfo.Object);
 
             PenaltyFeeCalculator calculator = new PenaltyFeeCalculator(penaltyStorage.Object);
-            var result = calculator.CalculatePenaltyFee(2, 1);
-            Assert.AreEqual(5, result);
+            var result = calculator.CalculatePenaltyFee(borrowInfo.Object);
+            Assert.AreEqual(10, result);
         }
     }
 }
