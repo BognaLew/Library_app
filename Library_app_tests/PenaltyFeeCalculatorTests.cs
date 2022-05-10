@@ -1,6 +1,7 @@
 using NUnit.Framework;
-using Library_app;
 using Moq;
+using Library_app;
+using Library_app.PenaltyOperators;
 
 namespace Library_app_tests
 {

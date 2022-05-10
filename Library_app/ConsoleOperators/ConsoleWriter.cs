@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Library_app
+namespace Library_app.ConsoleOperators
 {
     public class ConsoleWriter
     {

@@ -1,6 +1,7 @@
 ﻿using System;
+using Library_app.PenaltyOperators;
 
-namespace Library_app
+namespace Library_app.ConsoleOperators
 {
     class ConsoleReader
     {

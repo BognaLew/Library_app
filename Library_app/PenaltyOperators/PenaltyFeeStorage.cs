@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Library_app
+namespace Library_app.PenaltyOperators
 {
     public class PenaltyFeeStorage
     {
