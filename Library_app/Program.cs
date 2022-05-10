@@ -7,11 +7,13 @@ namespace Library_app
         static void Main(string[] args)
         {
             PenaltyFeeStorage storage = new PenaltyFeeStorage();
-            PenaltyFeeCalculator calculator = new PenaltyFeeCalculator(storage);
-            Console.WriteLine(calculator.CalculatePenaltyFee(2, 1));
 
             ConsoleReader reader = new ConsoleReader(storage);
+            ConsoleWriter writer = new ConsoleWriter();
             reader.ReadFromConsole();
+
+            PenaltyFeeCalculator calculator = new PenaltyFeeCalculator(storage);
+            writer.WriteOnConsole(calculator.CalculatePenaltyFee(2, 1));
         }
     }
 }
