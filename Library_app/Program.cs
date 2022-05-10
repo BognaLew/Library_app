@@ -1,4 +1,6 @@
 ﻿using System;
+using Library_app.ConsoleOperators;
+using Library_app.PenaltyOperators;
 
 namespace Library_app
 {
@@ -11,10 +13,20 @@ namespace Library_app
 
             ConsoleReader reader = new ConsoleReader(storage);
             ConsoleWriter writer = new ConsoleWriter();
-            reader.ReadFromConsole(borrowInfo);
 
             PenaltyFeeCalculator calculator = new PenaltyFeeCalculator(storage);
-            writer.WriteOnConsole(calculator.CalculatePenaltyFee(borrowInfo));
+
+            while (true)
+            {
+                reader.ReadFromConsole(borrowInfo);
+                writer.WriteOnConsole(calculator.CalculatePenaltyFee(borrowInfo));
+                Console.WriteLine("End program? [y/N]");
+                string ans = Console.ReadLine();
+                if (ans.ToLower().Equals("y"))
+                {
+                    break;
+                }
+            }
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Library_app
+namespace Library_app.PenaltyOperators
 {
     public class PenaltyInfo
     {
@@ -11,9 +13,9 @@ namespace Library_app
         /// <summary>
         /// Sets initial book type, id of a book and penalty fee per day.
         /// </summary>
-        /// <param name="bookType">Book type.</param>
-        /// <param name="bookId">Id of a book type.</param>
-        /// <param name="penalty">Penalty per day.</param>
+        /// <param name="bookType">book type</param>
+        /// <param name="bookId">id of a book type</param>
+        /// <param name="penalty">penalty per day</param>
         public PenaltyInfo(string bookTypeName, int bookTypeId, int penalty)
         {
             this.bookTypeName = bookTypeName;
@@ -24,7 +26,7 @@ namespace Library_app
         /// <summary>
         /// Gets penalty fee per day.
         /// </summary>
-        /// <returns>Penalty per day.</returns>
+        /// <returns>penalty per day</returns>
         public virtual int GetPenalty()
         {
             return penalty;
@@ -33,7 +35,7 @@ namespace Library_app
         /// <summary>
         /// Gets id of a book type.
         /// </summary>
-        /// <returns>Id of a book type.</returns>
+        /// <returns>id of a book type</returns>
         public int GetBookTypeId()
         {
             return bookTypeId;
@@ -42,7 +44,7 @@ namespace Library_app
         /// <summary>
         /// Sets penalty fee per day.
         /// </summary>
-        /// <param name="penalty">Penalty per day.</param>
+        /// <param name="penalty">penalty per day</param>
         public void SetPenalty(int penalty)
         {
             this.penalty = penalty;

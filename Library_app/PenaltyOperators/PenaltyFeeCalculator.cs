@@ -1,5 +1,5 @@
 ﻿
-namespace Library_app
+namespace Library_app.PenaltyOperators
 {
     public class PenaltyFeeCalculator
     {
