@@ -6,7 +6,8 @@ namespace Library_app
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PenaltyFeeCalculator calculator = new PenaltyFeeCalculator();
+            Console.WriteLine(calculator.CalculatePenaltyFee(2, 1));
         }
     }
 }
