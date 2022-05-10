@@ -70,16 +70,16 @@ namespace Library_app
         /// <summary>
         /// Reads input about borrowed book.
         /// </summary>
-        public void ReadFromConsole()
+        public void ReadFromConsole(BorrowInfo borrowInfo)
         {
-            int bookTypeId = ReadBookTypeId();
+            borrowInfo.SetBookTypeId(ReadBookTypeId());
             DateTime borrowDate = ReadDate("borrow");
             DateTime returnDate = ReadDate("return");
 
             int numberOfDays;
             if (int.TryParse(returnDate.Subtract(borrowDate).Days.ToString(), out numberOfDays))
             {
-                Console.WriteLine($"Days = {numberOfDays}, book id = {bookTypeId}");
+                borrowInfo.SetNumberOfDays(numberOfDays);
             }
         }
     }
