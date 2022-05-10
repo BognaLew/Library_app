@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Library_app
 {
@@ -13,9 +11,9 @@ namespace Library_app
         /// <summary>
         /// Sets initial book type, id of a book and penalty fee per day.
         /// </summary>
-        /// <param name="bookType">book type</param>
-        /// <param name="bookId">id of a book type</param>
-        /// <param name="penalty">penalty per day</param>
+        /// <param name="bookType">Book type.</param>
+        /// <param name="bookId">Id of a book type.</param>
+        /// <param name="penalty">Penalty per day.</param>
         public PenaltyInfo(string bookTypeName, int bookTypeId, int penalty)
         {
             this.bookTypeName = bookTypeName;
@@ -26,8 +24,8 @@ namespace Library_app
         /// <summary>
         /// Gets penalty fee per day.
         /// </summary>
-        /// <returns>penalty per day</returns>
-        public int GetPenalty()
+        /// <returns>Penalty per day.</returns>
+        public virtual int GetPenalty()
         {
             return penalty;
         }
@@ -35,7 +33,7 @@ namespace Library_app
         /// <summary>
         /// Gets id of a book type.
         /// </summary>
-        /// <returns>id of a book type</returns>
+        /// <returns>Id of a book type.</returns>
         public int GetBookTypeId()
         {
             return bookTypeId;
@@ -44,10 +42,18 @@ namespace Library_app
         /// <summary>
         /// Sets penalty fee per day.
         /// </summary>
-        /// <param name="penalty">penalty per day</param>
+        /// <param name="penalty">Penalty per day.</param>
         public void SetPenalty(int penalty)
         {
             this.penalty = penalty;
+        }
+
+        /// <summary>
+        /// Prints id and name of a book type.
+        /// </summary>
+        public void PrintPenaltyInfo()
+        {
+            Console.Write($" [{bookTypeId}] {bookTypeName}");
         }
     }
 }
